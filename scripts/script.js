@@ -158,7 +158,7 @@ function displayPets() {
               <p>${pet.nome}</p>
   
               <img class="infos__icon" src=${iconSex} alt="ícone de sexo">
-              <p>Macho</p>
+              <p>${pet.sexo}</p>
   
               <img class="infos__icon" src="icons/bolo.svg" alt="ícone de bolo">
               <p>${pet.idade}</p>

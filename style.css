@@ -163,15 +163,16 @@ nav {
 }
 
 .section__petImg {
+  background: none;
   object-fit: cover;
   max-width: 250px;
+  height: 340px;
   border-radius: 2rem 2rem 0 0;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .section__shopImg {
   max-width: 250px;
-  height: 250px;
   border-radius: 2rem 2rem 0 0;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   object-fit: cover;
@@ -357,7 +358,7 @@ footer {
   }
 
   .menu__mobile a {
-    font-size: 1.1rem;
+    font-size: .775rem;
   }
 
   .nav__container nav {
@@ -393,14 +394,20 @@ footer {
   }
 
   .section__petImg {
-    width: 150px;
+    object-fit: cover;
+    width: 170px;
+    height: 170px;
   }
   .section__item {
-    width: 150px;
+    width: 170px;
   }
   .section__infos {
     padding: 0.5rem;
     gap: 0.5rem 0;
+  }
+
+  .section__item P {
+    font-size: .775rem;
   }
 
   .sections__button {
@@ -411,7 +418,8 @@ footer {
   }
 
   .section__shopImg {
-    width: 150px;
+    width: 170px;
+    height: 170px;
   }
 
   .section__3--text h2 {
