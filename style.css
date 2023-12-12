@@ -16,6 +16,10 @@ img {
   max-width: 100%;
 }
 
+.menu{
+  display: none;
+}
+
 .menu__mobile {
   display: none;
 }
@@ -262,6 +266,7 @@ footer {
 
 /* Responsive */
 @media (max-width: 700px) {
+
   ul,
   a {
     background: none;
@@ -278,6 +283,7 @@ footer {
   }
 
   .menu {
+    display: block;
     cursor: pointer;
     z-index: 80;
     position: fixed;
@@ -313,10 +319,6 @@ footer {
     height: 400px;
   }
 
-  .hidden {
-    display: none;
-  }
-
   .menu__mobile span {
     cursor: pointer;
     color: white;
@@ -324,6 +326,10 @@ footer {
     border-radius: 50%;
     padding: 1rem;
     margin-left: 6rem;
+  }  
+
+  .hidden{
+    display: none;
   }
 
   .menu__mobile li {
