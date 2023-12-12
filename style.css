@@ -382,10 +382,10 @@ footer {
   }
 
   .section__petImg {
-    max-width: 170px;
+    width: 150px;
   }
   .section__item {
-    max-width: 170px;
+    width: 150px;
   }
   .section__infos {
     padding: 0.5rem;
@@ -400,7 +400,7 @@ footer {
   }
 
   .section__shopImg {
-    max-width: 170px;
+    width: 150px;
   }
 
   .section__3--text h2 {
