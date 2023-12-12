@@ -311,11 +311,11 @@ footer {
     position: fixed;
     z-index: 100;
     display: block;
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
     background: orange;
     right: 0;
     top: 0;
-    width: 160px;
+    width: 200px;
     height: 400px;
   }
 
@@ -325,15 +325,23 @@ footer {
     background: red;
     border-radius: 50%;
     padding: 1rem;
-    margin-left: 6rem;
+    right: 20px;
+    top: 10px;
+    position: fixed;
   }  
+
+  .menu__mobile ul {
+    margin-top: 2rem;
+  }
 
   .hidden{
     display: none;
   }
 
   .menu__mobile li {
-    margin-top: 2rem;
+    text-align: right;
+    margin-right: 2rem;
+    margin-top: 3rem;
     margin-bottom: 3rem;
   }
 
@@ -358,7 +366,7 @@ footer {
   }
 
   .section__1--text p {
-    font-size: 0.875rem;
+    font-size: 1rem;
     word-spacing: 0.3rem;
   }
   .section__img {
