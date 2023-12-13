@@ -137,7 +137,7 @@ const dataShop = [
 ];
 
 function displayPets() {
-  dataPets.forEach((pet, index) => {
+  dataPets.forEach((pet) => {
     if (pet.sexo === 'Macho') {
       iconImg = './icons/macho.svg';
       iconAlt = 'Sexo masculino';
@@ -171,7 +171,7 @@ function displayPets() {
               <img class="infos__icon" src="icons/localizador.svg" alt="ícone de localizador">
               <p>${pet.local}</p>
   
-              <button class="sections__button btnPetModal" data-index="${index}">ADOTAR</button>
+              <button class="sections__button btnPetModal">ADOTAR</button>
             </div>
   
           </div>`;
@@ -181,10 +181,7 @@ function displayPets() {
     btnPetModals = document.querySelectorAll('.btnPetModal');
 
     btnPetModals.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const petIndex = e.currentTarget.dataset.index;
-        displayPetModal(petIndex);
-      });
+      btn.addEventListener('click', () => displayPetModal());
     });
   });
 }
@@ -213,10 +210,7 @@ function displayShop() {
     btnShopModals = document.querySelectorAll('.btnShopModal');
 
     btnShopModals.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const shopIndex = e.currentTarget.dataset.index;
-        displayShopModal(shopIndex);
-      });
+      btn.addEventListener('click', () => displayShopModal(shopIndex));
     });
   });
 }
@@ -229,7 +223,7 @@ function scrollToSection(e) {
 }
 
 function openMenu() {
-  overlay.classList.remove('hidden')
+  overlay.classList.remove('hidden');
   menuMobile.classList.remove('hidden');
 }
 
@@ -255,6 +249,13 @@ function closeModals() {
   shopModal.classList.add('hidden');
   petModal.classList.add('hidden');
 }
+
+navBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollToSection(e);
+  });
+});
 
 btnPetModals.forEach((btn) => {
   btn.addEventListener('click', (e) => {
@@ -284,13 +285,6 @@ verMaisPets.addEventListener('click', () => {
 
 verMaisShop.addEventListener('click', () => {
   displayShop();
-});
-
-navBtns.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    scrollToSection(e);
-  });
 });
 
 menu.addEventListener('click', () => {
