@@ -153,7 +153,7 @@ nav {
 
 .section__item {
   transition: 0.2s;
-  max-width: 250px;
+  width: 250px;
   margin-top: 4rem;
 }
 
@@ -165,14 +165,14 @@ nav {
 .section__petImg {
   background: none;
   object-fit: cover;
-  max-width: 250px;
+  width: 250px;
   height: 340px;
   border-radius: 2rem 2rem 0 0;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .section__shopImg {
-  max-width: 250px;
+  width: 250px;
   border-radius: 2rem 2rem 0 0;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   object-fit: cover;
@@ -252,9 +252,6 @@ nav {
   background: none;
 }
 
-.section__petImg {
-  object-fit: scale-down;
-}
 
 /* Footer */
 footer {
