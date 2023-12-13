@@ -25,19 +25,6 @@
 
   <main>
 
-    <div class="menu"><img src="./icons/menu.svg" alt=""></div>
-
-    <div class="overlay hidden">
-    </div>
-
-    <div class="menu__mobile hidden">
-      <span>X</span>
-      <ul>
-        <li><a href="#section-1">SOBRE NÓS</a></li>
-        <li><a href="#section-2">NOSSOS ANIMAIS</a></li>
-        <li><a href="#section-3">NOSSOS PRODUTOS</a></li>
-    </div>
-
     <section id="section-1" class=" container section__1--container">
       <div class="section__1--text">
         <h1>DogCats's</h1>
@@ -80,7 +67,7 @@
             <img class="infos__icon" src="icons/localizador.svg" alt="ícone de localizador">
             <p>Santos/SP</p>
 
-            <button class="sections__button ">ADOTAR</button>
+            <button class="sections__button btnPetModal">ADOTAR</button>
           </div>
 
         </div>
@@ -101,7 +88,7 @@
             <img class="infos__icon" src="icons/localizador.svg" alt="ícone de localizador">
             <p>São Vicente/SP</p>
 
-            <button class="sections__button ">ADOTAR</button>
+            <button class="sections__button btnPetModal">ADOTAR</button>
           </div>
 
         </div>
@@ -122,7 +109,7 @@
             <img class="infos__icon" src="icons/localizador.svg" alt="ícone de localizador">
             <p>Santos/SP</p>
 
-            <button class="sections__button ">ADOTAR</button>
+            <button class="sections__button btnPetModal">ADOTAR</button>
           </div>
         </div>
 
@@ -150,7 +137,7 @@
             <img class="infos__icon" src="icons/dolar.svg" alt="ícone de dolar">
             <p>R$ 19,99</p>
 
-            <button class="sections__button ">COMPRAR</button>
+            <button class="sections__button btnShopModal">COMPRAR</button>
           </div>
         </div>
 
@@ -164,7 +151,7 @@
             <img class="infos__icon" src="icons/dolar.svg" alt="ícone de dolar">
             <p>R$ 16,99</p>
 
-            <button class="sections__button ">COMPRAR</button>
+            <button class="sections__button btnShopModal">COMPRAR</button>
           </div>
         </div>
 
@@ -178,7 +165,7 @@
             <img class="infos__icon" src="icons/dolar.svg" alt="ícone de dolar">
             <p>R$ 16,99</p>
 
-            <button class="sections__button ">COMPRAR</button>
+            <button class="sections__button btnShopModal">COMPRAR</button>
           </div>
         </div>
 
@@ -186,7 +173,28 @@
       <button id="verMaisShop" class="section__button--more">VER MAIS </button>
     </section>
 
+    <div class="menu"><img src="./icons/menu.svg" alt=""></div>
 
+    <div class="overlay hidden">
+    </div>
+
+    <div class="menu__mobile hidden">
+      <span>X</span>
+      <ul>
+        <li><a href="#section-1">SOBRE NÓS</a></li>
+        <li><a href="#section-2">NOSSOS ANIMAIS</a></li>
+        <li><a href="#section-3">NOSSOS PRODUTOS</a></li>
+    </div>
+
+    <div class="petModal hidden">
+      <h2>Obrigado por adotar um animal!</h2>
+      <button class="closeModal">FECHAR</button>
+    </div>
+
+    <div class="shopModal hidden">
+      <h2>Obrigado por comprar com a gente!</h2>
+      <button class="closeModal">FECHAR</button>
+    </div>
 
   </main>
 

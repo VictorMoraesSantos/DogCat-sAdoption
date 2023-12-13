@@ -2,11 +2,16 @@ const verMaisPets = document.querySelector('#verMaisPets');
 const verMaisShop = document.querySelector('#verMaisShop');
 const petsSection = document.querySelector('#pets');
 const shopSection = document.querySelector('#shop');
+let btnPetModals = document.querySelectorAll('.btnPetModal');
+let btnShopModals = document.querySelectorAll('.btnShopModal');
 const navBtns = document.querySelectorAll('.nav__container a');
 const menu = document.querySelector('.menu');
 const overlay = document.querySelector('.overlay');
 const menuMobile = document.querySelector('.menu__mobile');
 const closeMenu = document.querySelector('.menu__mobile span');
+const petModal = document.querySelector('.petModal');
+const shopModal = document.querySelector('.shopModal');
+const closeModal = document.querySelectorAll('.closeModal');
 
 const dataPets = [
   {
@@ -132,7 +137,7 @@ const dataShop = [
 ];
 
 function displayPets() {
-  dataPets.forEach((pet) => {
+  dataPets.forEach((pet, index) => {
     if (pet.sexo === 'Macho') {
       iconImg = './icons/macho.svg';
       iconAlt = 'Sexo masculino';
@@ -166,14 +171,21 @@ function displayPets() {
               <img class="infos__icon" src="icons/localizador.svg" alt="ícone de localizador">
               <p>${pet.local}</p>
   
-              <button class="sections__button ">ADOTAR</button>
+              <button class="sections__button btnPetModal" data-index="${index}">ADOTAR</button>
             </div>
   
           </div>`;
-
     verMaisPets.classList.add('hidden');
 
-    return petsSection.appendChild(divPet);
+    petsSection.appendChild(divPet);
+    btnPetModals = document.querySelectorAll('.btnPetModal');
+
+    btnPetModals.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const petIndex = e.currentTarget.dataset.index;
+        displayPetModal(petIndex);
+      });
+    });
   });
 }
 
@@ -191,13 +203,21 @@ function displayShop() {
             <img class="infos__icon" src="icons/dolar.svg" alt="ícone de dolar">
             <p>${item.preco}</p>
 
-            <button class="sections__button ">COMPRAR</button>
+            <button class="sections__button btnShopModal"">COMPRAR</button>
           </div>
         </div>`;
 
     verMaisShop.classList.add('hidden');
 
-    return shopSection.appendChild(divShop);
+    shopSection.appendChild(divShop);
+    btnShopModals = document.querySelectorAll('.btnShopModal');
+
+    btnShopModals.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const shopIndex = e.currentTarget.dataset.index;
+        displayShopModal(shopIndex);
+      });
+    });
   });
 }
 
@@ -207,6 +227,48 @@ function scrollToSection(e) {
   const options = { top: targetSection.offsetTop, behavior: 'smooth' };
   window.scrollTo(options);
 }
+
+function openMenu() {
+  overlay.classList.remove('hidden')
+  menuMobile.classList.remove('hidden');
+}
+
+function displayMenu() {
+  petModal.classList.add('hidden');
+  shopModal.classList.add('hidden');
+  overlay.classList.toggle('hidden');
+  menuMobile.classList.add('hidden');
+}
+
+function displayPetModal() {
+  overlay.classList.remove('hidden');
+  petModal.classList.remove('hidden');
+}
+
+function displayShopModal() {
+  overlay.classList.remove('hidden');
+  shopModal.classList.remove('hidden');
+}
+
+function closeModals() {
+  overlay.classList.add('hidden');
+  shopModal.classList.add('hidden');
+  petModal.classList.add('hidden');
+}
+
+btnPetModals.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const petIndex = e.currentTarget.dataset.index;
+    displayPetModal(petIndex);
+  });
+});
+
+btnShopModals.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const shopIndex = e.currentTarget.dataset.index;
+    displayShopModal(shopIndex);
+  });
+});
 
 verMaisPets.addEventListener('click', () => {
   displayPets();
@@ -231,14 +293,8 @@ navBtns.forEach((btn) => {
   });
 });
 
-function displayMenu() {
-  menu.classList.toggle('hidden');
-  overlay.classList.toggle('hidden');
-  menuMobile.classList.toggle('hidden');
-}
-
 menu.addEventListener('click', () => {
-  displayMenu();
+  openMenu();
 });
 
 overlay.addEventListener('click', () => {
@@ -247,4 +303,8 @@ overlay.addEventListener('click', () => {
 
 closeMenu.addEventListener('click', () => {
   displayMenu();
+});
+
+closeModal.forEach((btn) => {
+  btn.addEventListener('click', () => closeModals());
 });
