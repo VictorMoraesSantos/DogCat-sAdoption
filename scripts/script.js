@@ -152,9 +152,7 @@ function displayPets() {
       ? (iconPet = './icons/cachorro.svg')
       : (iconPet = './icons/gato.svg');
 
-    const divPet = document.createElement('div');
-
-    divPet.innerHTML = `
+    const dataPet = `
     <div class="section__item translate">
             <img class="section__petImg" src=${pet.img} alt=${pet.petImgAlt}>
   
@@ -177,7 +175,8 @@ function displayPets() {
           </div>`;
     verMaisPets.classList.add('hidden');
 
-    petsSection.appendChild(divPet);
+    petsSection.insertAdjacentHTML('beforeend', dataPet);
+
     btnPetModals = document.querySelectorAll('.btnPetModal');
 
     btnPetModals.forEach((btn) => {
@@ -188,8 +187,7 @@ function displayPets() {
 
 function displayShop() {
   dataShop.forEach((item) => {
-    const divShop = document.createElement('div');
-    divShop.innerHTML = `
+    const dataShop = `
     <div class="section__item translate">
           <img class="section__shopImg" src="${item.img}" alt= >
 
@@ -206,7 +204,7 @@ function displayShop() {
 
     verMaisShop.classList.add('hidden');
 
-    shopSection.appendChild(divShop);
+    shopSection.insertAdjacentHTML('beforeend', dataShop);
     btnShopModals = document.querySelectorAll('.btnShopModal');
 
     btnShopModals.forEach((btn) => {

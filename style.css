@@ -172,6 +172,7 @@ nav {
 
 .section__shopImg {
   width: 250px;
+  height: 250px;
   border-radius: 2rem 2rem 0 0;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   object-fit: cover;
