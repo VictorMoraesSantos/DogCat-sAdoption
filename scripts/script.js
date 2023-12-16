@@ -205,10 +205,11 @@ function displayShop() {
     verMaisShop.classList.add('hidden');
 
     shopSection.insertAdjacentHTML('beforeend', dataShop);
+
     btnShopModals = document.querySelectorAll('.btnShopModal');
 
     btnShopModals.forEach((btn) => {
-      btn.addEventListener('click', () => displayShopModal(shopIndex));
+      btn.addEventListener('click', () => displayShopModal());
     });
   });
 }
